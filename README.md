@@ -36,4 +36,28 @@ To begin, I created the first hidden layer, added a second hidden layer and an o
 
 ![image](https://github.com/SheTroxel/deep-learning-challenge/assets/117420486/c8b72935-5240-4ea7-8cfb-624f7e0b3c9a)
 
+I then checked the structure of the model, created a callback that saves the model's weights every five epochs.
 
+Using the test data, I evaluated the model to determine the loss and accuracy. Then I exported the results to an HDF5 file.
+
+### Optimizing the Model
+For this challenge, we were asked to optimize the model to achieve a target predictive accuracy higher than 75%. To begin, I started by adding additional layers to see if that might provide a higher predictive accracy score. I then looked at the initial data to determine if any additional data could be binned or removed. 
+
+First optimization model:
+  
+I removed the STATUS column, adding layers for a second model. Each layer had 5 nodes. 
+
+  
+Second optimization model: 
+  
+I added two more hidden layers to the second model, to see if that might help to improve target predictive accuracy score 
+
+  
+OneHotEncoder optimization model:
+After adding layers, I looked at using 'OneHotEncoder' mostly out of curiousity. However, in seeing that it derives the categories based on the unique values in each feature and creates a binary column - I thought it might be helpful with the many categories that are present in our features array. Sadly, it did not do anything that provide improvement to our model but it was fun to try it out.
+
+Optimized Model:
+In a classroom activity, we created a method that created a new Sequential model with hyperparameter options, allowed kerastuner to decide which activation function to use in hidden layers, and allowed Kerastuner to decide number of hidden layers and neurons in hidden layers. I wanted to use this approach on this model to determine if hyperparameter options and kerastuner could provide a model that would improve the target predictive accuracy score. 
+  
+
+ After trying several attempts to improve target predictive accuracy, I was not able to achieve a 75% target predictive accuracy.
