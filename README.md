@@ -41,23 +41,61 @@ I then checked the structure of the model, created a callback that saves the mod
 Using the test data, I evaluated the model to determine the loss and accuracy. Then I exported the results to an HDF5 file.
 
 ### Optimizing the Model
-For this challenge, we were asked to optimize the model to achieve a target predictive accuracy higher than 75%. To begin, I started by adding additional layers to see if that might provide a higher predictive accracy score. I then looked at the initial data to determine if any additional data could be binned or removed. 
+For this challenge, we were asked to optimize the model to achieve a target predictive accuracy higher than 75%. I copied over the details from the original colab notebook file to a new file to begin my optimization process. This file can be found here.
+![AlphabetSoupCharityOptimized.ipynb](https://github.com/SheTroxel/deep-learning-challenge/blob/main/AlphabetSoupCharityOptimized.ipynb) 
 
-First optimization model:
-  
-I removed the STATUS column, adding layers for a second model. Each layer had 5 nodes. 
+To begin, I looked at the initial data brought into the pandas DataFrame from the csv file to determine if any additional data could be dropped or further binned. 
 
-  
-Second optimization model: 
-  
-I added two more hidden layers to the second model, to see if that might help to improve target predictive accuracy score 
+  *The STATUS column determines if the project is active or not. Since activation doesn’t directly determine if a past or current project is      successful,  I dropped this column along with the EIN and NAME columns.
 
+  *I also increased the ‘app_count’ to < 1000   to increase the number of applications to be included in the OTHER category. 
+
+
+Next, I continued through the code to determine if I wanted to make any further adjustments before moving on to the Optimizing the model section of the notebook. I did not change anything further.
+
+### The Optimized Model 
+To find the best model parameters for this data set, I used a Sequential model with hyperparameter options to help determine what would be the ideal model for our target and features data. Using hyperparameter options allows Kerastuner to decide which activation function to use in hidden layers, how many neurons to include in the first layer, the number of hidden layers and neurons in the hidden layers. 
+
+ 
+
+                                             
+                                             
+                                             
+I then compiled the model, used a kerastuner library, and ran kerastuner to search for best hyperparameters.
+
+ 
+
+ 
+
+Determined the best hyperparameters:
+ 
+  
+The optimized model did not achieve an accuracy of 75% or higher. This challenged me to explore a couple other options. Using the initial colab notebook, I created several notebooks to see if other options could bring our accuracy to 75% or higher. 
+
+
+I did not achieve a target predictive accuracy score of 75% or higher on any of the additional model optimizations. 
+
+### More Optimizations
+ 
+Determined to see if I could reach a target predictive accuracy score above 75%, I created three additional colab notebooks based on the initial colab notebook: AlphabetSoupCharity.ipynb
+
+AlphabetSoupCharityOptiizedV1 
+As in my first optimization, I dropped the STATUS column, and I increased the ‘app_count’ to < 1000   to increase the number of applications to be included in the OTHER category. 
+
+For my model, I added 3 hidden layers each using 5 neurons and a Relu activation. I then complied and fit my model increasing epochs from 50 to 100. I then evaluated the model using the test data and received an accuracy sore of 73.06%
+
+ 
+
+
+AlphabetSoupCharityOptiizedV2
+
+This model is like the AlphabetSoupCharityOptimizedV1, with the only change being to the hidden layers. I increased the number of hidden layers to 5 using 5 neurons for each layer.  This actually reduced our accuracy score to 72.97 %
+
+ 
   
 OneHotEncoder optimization model:
-After adding layers, I looked at using 'OneHotEncoder' mostly out of curiousity. However, in seeing that it derives the categories based on the unique values in each feature and creates a binary column - I thought it might be helpful with the many categories that are present in our features array. Sadly, it did not do anything that provide improvement to our model but it was fun to try it out.
 
-Optimized Model:
-In a classroom activity, we created a method that created a new Sequential model with hyperparameter options, allowed kerastuner to decide which activation function to use in hidden layers, and allowed Kerastuner to decide number of hidden layers and neurons in hidden layers. I wanted to use this approach on this model to determine if hyperparameter options and kerastuner could provide a model that would improve the target predictive accuracy score. 
-  
+After adding layers, I looked at using 'OneHotEncoder' mostly out of curiosity. However, in seeing that it derives the categories based on the unique values in each feature and creates a binary column - I thought it might be helpful especially with the many categories that are present in our features array. Sadly, it did not do anything that improved accuracy of our model but it was fun to try.
 
- After trying several attempts to improve target predictive accuracy, I was not able to achieve a 75% target predictive accuracy.
+ 
+
