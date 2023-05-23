@@ -98,4 +98,4 @@ After adding layers, I looked at using `OneHotEncoder` mostly out of curiosity. 
 
  
 ### Recommendations 
-Despite the number of optimizations that I ran, we could further optimize by potentially increasing the hidden layers, neurons, and adding more epochs as there are many different applications, categories that we may need more neurons to make connections and longer run times to get above the 75% accuracy score.
+Despite the number of optimizations that I ran,  further optimization could be conducted to increase the hidden layers, neurons, and adding more epochs as there are many different applications, categories that we may need more neurons to make connections and longer run times to get above the 75% accuracy score.
