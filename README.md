@@ -99,3 +99,18 @@ After adding layers, I looked at using `OneHotEncoder` mostly out of curiosity. 
  
 ### Recommendations 
 Despite the number of optimizations that I ran,  further optimization could be conducted to increase the hidden layers, neurons, and adding more epochs as there are many different applications, categories that we may need more neurons to make connections and longer run times to get above the 75% accuracy score.
+
+
+------------------------------------------------------------------------------------------------------
+### References
+MSU Data Analytics Bootcamp Lesson Activities
+
+stackoverflow: 
+https://stackoverflow.com/questions/22320356/pandas-get-values-from-column-that-appear-more-than-x-times
+
+https://stackoverflow.com/questions/61046870/how-to-save-weights-of-keras-model-for-each-epoch#:~:text=To%20save%20weights%20every%20epoch,known%20as%20callbacks%20in%20Keras.&text=checkpoint%20%3D%20ModelCheckpoint(...,This%20should%20do%20it.
+
+random state reference: 
+https://towardsdatascience.com/why-do-we-set-a-random-state-in-machine-learning-models-bb2dc68d8431
+
+
